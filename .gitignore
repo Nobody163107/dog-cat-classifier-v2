@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+env/
+env1/
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+kaggle.env
+
+# Temporary files
+temp_*
+*.tmp
+
+# VS Code
+.vscode/
+
+# Model files (if large)
+*.h5
+*.keras
+
+# OS files
+.DS_Store
+Thumbs.db
+
+model/Dogcat-classifier.keras

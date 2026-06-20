@@ -1,0 +1,2 @@
+FastApi is like a service which acts as waiter between the client and the server(in this case, user is the customer waiter is the fastapi, and the kitchen is like the server. )
+
