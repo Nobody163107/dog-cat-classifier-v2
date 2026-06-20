@@ -31,3 +31,7 @@ temp_*
 Thumbs.db
 
 model/Dogcat-classifier.keras
+catsvsdogs/
+train/
+test/
+dataset/
