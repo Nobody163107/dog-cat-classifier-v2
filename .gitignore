@@ -24,7 +24,7 @@ temp_*
 
 # Model files (if large)
 *.h5
-*.keras
+# *.keras
 
 # OS files
 .DS_Store
