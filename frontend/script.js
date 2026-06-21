@@ -28,7 +28,7 @@ predbtn.addEventListener("click", async (event) => {
         console.log("SENDING REQUEST");
 
         const response = await fetch(
-            "http://localhost:8000/predict",
+            "https://dog-cat-classifier-v2.onrender.com/predict",
             {
                 method: "POST",
                 body: formdata
