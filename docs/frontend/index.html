@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog vs Cat Classifier</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>🐶 Dog vs Cat Classifier 🐱</h1>
+            <p>
+                Deep Learning powered image classification using TensorFlow and FastAPI
+            </p>
+        </header>
+
+        <!-- TAB BUTTONS -->
+
+        <div class="tab-buttons">
+
+            <button class="tab-btn active" data-tab="predict-tab" type="button">
+                Prediction
+            </button>
+
+            <button class="tab-btn" data-tab="shap-tab" type="button">
+                Explainability
+            </button>
+
+            <button class="tab-btn" data-tab="search-tab" type="button">
+                Search Images
+            </button>
+
+            <button class="tab-btn" data-tab="about-tab" type="button">
+                About Model
+            </button>
+
+        </div>
+
+        <!-- PREDICTION TAB -->
+
+        <div id="predict-tab" class="tab-content active-tab">
+
+            <div class="card">
+
+                <input type="file" id="ImageInput" hidden>
+
+                <label for="ImageInput" class="upload-btn">
+                    📁 Choose Image
+                </label>
+
+                <div id="filename" class="filename">
+                    No file selected
+                </div>
+
+                <img id="preview" src="" alt="Preview Image">
+
+                <button id="predbtn" type="button">
+                    Predict
+                </button>
+
+                <div id="prediction-card" class="prediction-card">
+
+                    <div class="progress-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+
+                    <h3>Prediction Result</h3>
+
+                    <div id="animal" class="animal">
+                        Awaiting Prediction
+                    </div>
+
+                    <div id="confidence" class="confidence">
+                        Confidence: --
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SHAP TAB -->
+
+        <div id="shap-tab" class="tab-content">
+
+            <div class="tab">
+
+                <h2>🔍 SHAP Explainability</h2>
+
+                <img id="shap-img" style="
+                    display:block;
+                    margin: auto;
+                    width:50%;
+                    max-width:700px;
+                    border-radius:15px;
+                    margin-top:20px;
+                    ">
+
+                <p style="margin-top:20px;display:block; margin:auto">
+                    Red regions positively contributed toward the model's prediction.
+                </p>
+
+                <p>
+                    Blue regions negatively contributed toward the prediction.
+                </p>
+
+                <p>
+                    SHAP helps explain why the CNN classified an image as a dog or cat.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- SEARCH TAB -->
+
+        <div id="search-tab" class="tab-content">
+
+            <div class="tab">
+
+                <h2>🔎 Search Images</h2>
+
+                <p>
+                    Search images directly without leaving the application.
+                </p>
+
+                <br>
+
+                <input type="text" id="search-query" placeholder="dog, cat, puppy...">
+
+                <button id="search-btn" type="button">
+                    Search
+                </button>
+
+                <br><br>
+
+                <div id="search-results">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ABOUT TAB -->
+
+        <div id="about-tab" class="tab-content">
+
+            <div class="tab">
+
+                <h2>⚙️ About Model</h2>
+
+                <br>
+
+                <ul>
+
+                    <li>TensorFlow / Keras</li>
+
+                    <li>Convolutional Neural Network (CNN)</li>
+
+                    <li>FastAPI Backend</li>
+
+                    <li>OpenCV Image Processing</li>
+
+                    <li>HTML + CSS + JavaScript Frontend</li>
+
+                    <li>SHAP Explainability</li>
+
+                    <li>Global Average Pooling</li>
+
+                    <li>Batch Normalization</li>
+
+                    <li>Dropout Regularization</li>
+
+                    <li>Data Augmentation</li>
+
+                    <li>Validation Accuracy: 90.28%</li>
+
+                </ul>
+
+                <br>
+
+                <h3>Challenges Faced</h3>
+
+                <br>
+
+                <ul>
+
+                    <li>Initial overfitting due to Flatten layer</li>
+
+                    <li>Replaced Flatten with GlobalAveragePooling</li>
+
+                    <li>Added Dropout layers</li>
+
+                    <li>Added Data Augmentation</li>
+
+                    <li>Integrated SHAP explainability</li>
+
+                    <li>Built FastAPI inference pipeline</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
