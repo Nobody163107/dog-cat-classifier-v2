@@ -1,11 +1,11 @@
 import os
-import cv2
 from tensorflow.keras.models import load_model
+import cv2
 
-model_test = load_model(
-    "/mnt/c/Users/Praneeth Tadi/Documents/Coding/Machine Learning/ML Projects/Dog-cat-classify/dog-cat-classify/model/Dogcat-classifier-v4.keras"
-)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "model", "Dogcat-classifier-v4.keras")
 
+model = load_model(MODEL_PATH)
 
 def predict_image(image):
     image_ = cv2.imread(image)
@@ -19,7 +19,7 @@ def predict_image(image):
     resize_img = resize_img.reshape((1, 256, 256, 3))
     resize_img = resize_img / 255.0
 
-    pred = model_test.predict(resize_img, verbose=0)
+    pred = model.predict(resize_img, verbose=0)
 
     score = float(pred[0][0])
 

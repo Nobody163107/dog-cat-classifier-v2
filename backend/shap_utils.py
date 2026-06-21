@@ -6,10 +6,20 @@ from tensorflow.keras.models import load_model
 import uuid 
 import os
 
+# import os
+# from tensorflow.keras.models import load_model
 
-model = load_model("/mnt/c/Users/Praneeth Tadi/Documents/Coding/Machine Learning/ML Projects/Dog-cat-classify/dog-cat-classify/model/Dogcat-classifier-v4.keras")
+BASE_DIR = os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))
+)
 
+MODEL_PATH = os.path.join(
+    BASE_DIR,
+    "model",
+    "Dogcat-classifier-v4.keras"
+)
 
+model = load_model(MODEL_PATH)
 def processor(path): 
         img = cv2.imread(path)
 
@@ -29,7 +39,8 @@ def processor(path):
 
 def generate_shap(img_batch, img): 
 
-    os.makedirs("static", exist_ok=True)
+    STATIC_DIR = os.path.join(BASE_DIR, "static")
+    os.makedirs(STATIC_DIR, exist_ok=True)
     masker = shap.maskers.Image("blur(8, 8)", img.shape)
 
     explainer = shap.Explainer(model.predict, masker)
