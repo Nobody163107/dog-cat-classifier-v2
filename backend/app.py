@@ -43,13 +43,13 @@ async def predict(file: UploadFile = File()):
 
         ver, pred = predict_image(temp_path)
 
-        shap, shapim = processor(temp_path)
-        shap_img = generate_shap(shap, shapim)
+        # shap, shapim = processor(temp_path)
+        # shap_img = generate_shap(shap, shapim)
 
         return {
             "Verdict": ver,
             "Prediction": pred,
-            "shap_image": shap_img,
+            # "shap_image": shap_img,
         }
     except Exception as e:
         return JSONResponse(
